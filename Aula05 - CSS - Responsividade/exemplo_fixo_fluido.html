@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Layouts Fixos e Fluidos </title>
+    <style>
+        body{
+            margin: 0;
+            font-size: 32px;
+        }
+        .engenharia, .farmacia, .matematica{
+            /* display: inline-block; */
+            border: solid 1px black;
+            padding: 12px;
+            /* 20% do valor fixo da tag main, que seria nesse caso */ 
+            /* 20% de 1280px, seria sempre 256px */
+            /* width: 20%;  */
+            height: 50px;
+        }
+        /* Layout Fixo, ou seja width em valor fixado de pixels */
+        main{
+            border: solid 1px black;
+            /* width: 1280px; layout fixo */
+            width: 100%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        @media(min-width: 900px){
+            .engenharia, .farmacia, .matematica{
+                display: inline-block;
+                width: 20%;
+            }
+        }
+        @media(min-width: 550px){
+            .engenharia, .farmacia, .matematica{
+                background-color: aliceblue;    
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <article class="engenharia">
+            Engenharia
+        </article>
+        <article class="farmacia">
+            Farmacia
+        </article>
+        <article class="matematica">
+            Matemática
+        </article>
+    </main>
+</body>
+</html>
